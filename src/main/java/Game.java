@@ -1,22 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
-    public static final int STRIKE = 10;
-    private int rollsNumber = 0;
+    private final List<Frame> frames = new ArrayList<>(10);
     public boolean isCompleted() {
         return false;
     }
 
-    public void roll(int score) {
-        if (score < 0) throw new IllegalScoreException(IllegalScoreException.ErrorCode.NEGATIVE_SCORE);
-        if (score > STRIKE) throw new IllegalScoreException(IllegalScoreException.ErrorCode.SCORE_GREATER_THAN_TEN);
-        rollsNumber += 1 + addRollIfStrike(score);
+    public Game() {
+        frames.add(new Frame());
     }
 
-    private static int addRollIfStrike(int score) {
-        return score == STRIKE ? 1 : 0;
+    public void roll(int score) {
+        getLastFrame()
+                .roll(score)
+                .ifPresent(frames::add);
+    }
+
+    private Frame getLastFrame() {
+        return frames.get(frames.size() - 1);
     }
 
     public int getFramesNumber() {
-        return Math.floorDiv(rollsNumber, 2);
+        return frames.size() - 1 + (getLastFrame().isFrameCompleted() ? 1 : 0);
     }
 
     public static class IllegalScoreException extends IllegalArgumentException {

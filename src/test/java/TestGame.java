@@ -23,8 +23,15 @@ public class TestGame {
     }
 
     @Test
-    void rollWithValueLargerThanTen_throwIllegalScoreException() {
+    void rollWithScoreLargerThanTen_throwIllegalScoreException() {
         Game.IllegalScoreException scoreException = assertThrows(Game.IllegalScoreException.class, () -> game.roll(11));
+        assertEquals(Game.IllegalScoreException.ErrorCode.SCORE_GREATER_THAN_TEN, scoreException.errorCode);
+    }
+
+    @Test
+    void twoRollsWithTotalScoreLargerThanTen_throwIllegalScoreException() {
+        game.roll(6);
+        Game.IllegalScoreException scoreException = assertThrows(Game.IllegalScoreException.class, () -> game.roll(5));
         assertEquals(Game.IllegalScoreException.ErrorCode.SCORE_GREATER_THAN_TEN, scoreException.errorCode);
     }
 

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="added error codes to illegal score exception">
+    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="test that strike adds a frame">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestGame.java" afterDir="false" />
     </list>
@@ -57,19 +59,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "jdk.selected.JAVA_MODULE": "corretto-11",
-    "last_opened_file_path": "C:/Program Files/gradle-7.5.1",
-    "settings.editor.selected.configurable": "editing.templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/gradle-7.5.1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestGame.gameWithTwoRolls_haseOneFrame">
+  <component name="RunManager" selected="Gradle.TestGame">
     <configuration name="TestGame" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -162,7 +164,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestGame.rollWithValueLargerThanTen_throwIllegalScoreException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestGame.twoRollsWithTotalScoreLargerThanTen_throwIllegalScoreException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -175,7 +177,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestGame.rollWithValueLargerThanTen_throwIllegalScoreException&quot;" />
+            <option value="&quot;TestGame.twoRollsWithTotalScoreLargerThanTen_throwIllegalScoreException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestGame.gameWithTwoRolls_haseOneFrame" />
         <item itemvalue="Gradle.TestGame" />
+        <item itemvalue="Gradle.TestGame.twoRollsWithTotalScoreLargerThanTen_throwIllegalScoreException" />
+        <item itemvalue="Gradle.TestGame.gameWithTwoRolls_haseOneFrame" />
         <item itemvalue="Gradle.TestGame.gameWithOneRoll_haseZeroFrames" />
         <item itemvalue="Gradle.TestGame.newGame_hasZeroFrames" />
-        <item itemvalue="Gradle.TestGame.rollWithValueLargerThanTen_throwIllegalScoreException" />
       </list>
     </recent_temporary>
   </component>
