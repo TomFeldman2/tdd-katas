@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestGame {
     private Game game;
@@ -14,17 +13,18 @@ public class TestGame {
 
     @Test
     void newGame_isNotCompleted() {
-
         assertFalse(game.isCompleted());
     }
 
     @Test
     void rollWithNegativeValue_throwsIllegalScoreException() {
-        assertThrows(Game.IllegalScoreException.class, () -> game.roll(-1));
+        Game.IllegalScoreException scoreException = assertThrows(Game.IllegalScoreException.class, () -> game.roll(-1));
+        assertEquals(Game.IllegalScoreException.ErrorCode.NEGATIVE_SCORE, scoreException.errorCode);
     }
 
     @Test
     void rollWithValueLargerThanTen_throwIllegalScoreException() {
-        assertThrows(Game.IllegalScoreException.class, () -> game.roll(11));
+        Game.IllegalScoreException scoreException = assertThrows(Game.IllegalScoreException.class, () -> game.roll(11));
+        assertEquals(Game.IllegalScoreException.ErrorCode.SCORE_GREATER_THAN_TEN, scoreException.errorCode);
     }
 }
