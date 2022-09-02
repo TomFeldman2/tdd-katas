@@ -2,27 +2,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private final List<Frame> frames = new ArrayList<>(10);
-    public boolean isCompleted() {
-        return false;
-    }
+    private static final int FRAMES_NUMBER = 10;
+    private final List<FrameScoreHandler> frameScoreHandlers = new ArrayList<>(FRAMES_NUMBER);
 
-    public Game() {
-        frames.add(new Frame());
-    }
+    private Frame currentFrame = new Frame();
 
     public void roll(int score) {
-        getLastFrame()
+        if (currentFrame == null) throw new GameEndedException();
+
+        addBonusRollFromEnd(1, score);
+        addBonusRollFromEnd(2, score);
+
+        currentFrame
                 .roll(score)
-                .ifPresent(frames::add);
+                .ifPresent(this::onFrameCompleted);
     }
 
-    private Frame getLastFrame() {
-        return frames.get(frames.size() - 1);
+    private void addBonusRollFromEnd(int index, int score) {
+        if (frameScoreHandlers.size() >= index) {
+            frameScoreHandlers.get(frameScoreHandlers.size() - index).addBonusScore(score);
+        }
+    }
+
+    private void onFrameCompleted(FrameScoreHandler frameScoreHandler) {
+        frameScoreHandlers.add(frameScoreHandler);
+
+        if (frameScoreHandlers.size() == FRAMES_NUMBER) {
+            currentFrame = null;
+            return;
+        }
+
+        currentFrame = new Frame();
     }
 
     public int getFramesNumber() {
-        return frames.size() - 1 + (getLastFrame().isFrameCompleted() ? 1 : 0);
+        return frameScoreHandlers.size();
+    }
+
+    public int getScore() {
+        return frameScoreHandlers.stream()
+                .mapToInt(FrameScoreHandler::getScore)
+                .sum();
     }
 
     public static class IllegalScoreException extends IllegalArgumentException {
@@ -37,5 +57,8 @@ public class Game {
             NEGATIVE_SCORE,
             SCORE_GREATER_THAN_TEN
         }
+    }
+
+    public static class GameEndedException extends RuntimeException{
     }
 }
