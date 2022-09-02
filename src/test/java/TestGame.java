@@ -45,4 +45,10 @@ public class TestGame {
         game.roll(0);
         assertEquals(1, game.getFramesNumber());
     }
+
+    @Test
+    void gameWithStrike_hasOneFrame() {
+        game.roll(10);
+        assertEquals(1, game.getFramesNumber());
+    }
 }
