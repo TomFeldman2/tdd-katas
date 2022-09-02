@@ -3,9 +3,12 @@ class FrameScoreHandler {
 
     private int score;
 
+    private final boolean isRegular;
+
     FrameScoreHandler(int score, int bonusRolls) {
         this.score = score;
         this.bonusRolls = bonusRolls;
+        isRegular = bonusRolls == 0;
     }
 
     void addBonusScore(int rollScore) {
@@ -17,5 +20,9 @@ class FrameScoreHandler {
 
     public int getScore() {
         return score;
+    }
+
+    public boolean isRegular() {
+        return isRegular;
     }
 }

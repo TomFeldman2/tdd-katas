@@ -92,9 +92,77 @@ public class TestGame {
         assertThrows(Game.GameEndedException.class, () -> game.roll(0));
     }
 
+    @Test
+    void gameEndWithStrike_allowsOneMoreRoll() {
+        executeDummyFrames(9);
+        game.roll(10);
+        assertDoesNotThrow(() -> game.roll(10));
+    }
+
+    @Test
+    void gameEndWithSpare_allowsOneMoreRoll() {
+        executeDummyFrames(9);
+        game.roll(5);
+        game.roll(5);
+        assertDoesNotThrow(() -> game.roll(10));
+    }
+
+    @Test
+    void gameEndWithStrike_throwsGameEndedWhenRollingAfterBonusRoll() {
+        executeDummyFrames(9);
+        game.roll(10);
+        game.roll(5);
+        assertThrows(Game.GameEndedException.class, () -> game.roll(0));
+    }
+
+    @Test
+    void gameEndWithSpare_throwsGameEndedWhenRollingAfterBonusRoll() {
+        executeDummyFrames(9);
+        game.roll(5);
+        game.roll(5);
+        game.roll(5);
+        assertThrows(Game.GameEndedException.class, () -> game.roll(0));
+    }
+
+    @Test
+    void gameEndWithStrike_lastRollIsDoubled() {
+        executeDummyFrames(9);
+        game.roll(10);
+        game.roll(5);
+        assertEquals(20, game.getScore());
+    }
+
+    @Test
+    void gameEndWithSpare_lastRollIsDoubled() {
+        executeDummyFrames(9);
+        game.roll(5);
+        game.roll(5);
+        game.roll(5);
+        assertEquals(20, game.getScore());
+    }
+
+    @Test
+    void gameEndsWithStrikeStrike_lastRollIsDoubled() {
+        executeDummyFrames(8);
+        game.roll(10);
+        game.roll(10);
+        game.roll(5);
+        assertEquals(45, game.getScore());
+    }
+
+    @Test
+    void gameEndsWithSpareStrike_lastRollIsDoubledForStrikeButNotForSpare() {
+        executeDummyFrames(8);
+        game.roll(5);
+        game.roll(5);
+        game.roll(10);
+        game.roll(5);
+        assertEquals(40, game.getScore());
+    }
+
     private void executeDummyFrames(int number) {
-        for (int i = 0; i < number; i++) {
-            game.roll(10);
+        for (int i = 0; i < 2 * number; i++) {
+            game.roll(0);
         }
     }
 }

@@ -8,7 +8,8 @@ public class Game {
     private Frame currentFrame = new Frame();
 
     public void roll(int score) {
-        if (currentFrame == null) throw new GameEndedException();
+
+        if (isGameEnded()) throw new GameEndedException();
 
         addBonusRollFromEnd(1, score);
         addBonusRollFromEnd(2, score);
@@ -18,6 +19,18 @@ public class Game {
                 .ifPresent(this::onFrameCompleted);
     }
 
+    private boolean isGameEnded() {
+       if (frameScoreHandlers.size() != FRAMES_NUMBER) return false;
+
+       if (frameScoreHandlers.get(frameScoreHandlers.size() - 1).isRegular()) {
+           return true;
+       }
+
+       return currentFrame.isNotEmpty();
+    }
+
+
+
     private void addBonusRollFromEnd(int index, int score) {
         if (frameScoreHandlers.size() >= index) {
             frameScoreHandlers.get(frameScoreHandlers.size() - index).addBonusScore(score);
@@ -26,12 +39,6 @@ public class Game {
 
     private void onFrameCompleted(FrameScoreHandler frameScoreHandler) {
         frameScoreHandlers.add(frameScoreHandler);
-
-        if (frameScoreHandlers.size() == FRAMES_NUMBER) {
-            currentFrame = null;
-            return;
-        }
-
         currentFrame = new Frame();
     }
 
@@ -40,9 +47,11 @@ public class Game {
     }
 
     public int getScore() {
-        return frameScoreHandlers.stream()
+        int sum = frameScoreHandlers.stream()
                 .mapToInt(FrameScoreHandler::getScore)
                 .sum();
+
+        return sum + currentFrame.getScore();
     }
 
     public static class IllegalScoreException extends IllegalArgumentException {

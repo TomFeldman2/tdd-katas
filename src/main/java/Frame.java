@@ -44,6 +44,14 @@ public class Frame {
         return new FrameScoreHandler(score, result.getBonusRolls());
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public boolean isNotEmpty() {
+        return state != State.NO_THROW;
+    }
+
     enum State {
         NO_THROW {
             @Override
