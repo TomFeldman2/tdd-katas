@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="added illegal scores checking">
+    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="added error codes to illegal score exception">
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestGame.java" afterDir="false" />
     </list>
@@ -69,7 +69,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestGame.rollWithValueLargerThanTen_throwIllegalScoreException">
+  <component name="RunManager" selected="Gradle.TestGame.gameWithTwoRolls_haseOneFrame">
     <configuration name="TestGame" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -93,7 +93,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestGame.newGame_isNotCompleted" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestGame.gameWithOneRoll_haseZeroFrames" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -106,7 +106,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestGame.newGame_isNotCompleted&quot;" />
+            <option value="&quot;TestGame.gameWithOneRoll_haseZeroFrames&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -116,7 +116,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestGame.rollWithNegativeValue_throwsIllegalScoreException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestGame.gameWithTwoRolls_haseOneFrame" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -129,7 +129,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestGame.rollWithNegativeValue_throwsIllegalScoreException&quot;" />
+            <option value="&quot;TestGame.gameWithTwoRolls_haseOneFrame&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGame.newGame_hasZeroFrames" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestGame.newGame_hasZeroFrames&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,10 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestGame.rollWithValueLargerThanTen_throwIllegalScoreException" />
-        <item itemvalue="Gradle.TestGame.rollWithNegativeValue_throwsIllegalScoreException" />
+        <item itemvalue="Gradle.TestGame.gameWithTwoRolls_haseOneFrame" />
         <item itemvalue="Gradle.TestGame" />
-        <item itemvalue="Gradle.TestGame.newGame_isNotCompleted" />
+        <item itemvalue="Gradle.TestGame.gameWithOneRoll_haseZeroFrames" />
+        <item itemvalue="Gradle.TestGame.newGame_hasZeroFrames" />
+        <item itemvalue="Gradle.TestGame.rollWithValueLargerThanTen_throwIllegalScoreException" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +232,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1662109397968</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="added error codes to illegal score exception">
+      <created>1662109780992</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1662109780992</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +258,7 @@
     <MESSAGE value="added game class" />
     <MESSAGE value="passed test new game is not completed" />
     <MESSAGE value="added illegal scores checking" />
-    <option name="LAST_COMMIT_MESSAGE" value="added illegal scores checking" />
+    <MESSAGE value="added error codes to illegal score exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="added error codes to illegal score exception" />
   </component>
 </project>

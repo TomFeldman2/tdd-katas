@@ -27,4 +27,22 @@ public class TestGame {
         Game.IllegalScoreException scoreException = assertThrows(Game.IllegalScoreException.class, () -> game.roll(11));
         assertEquals(Game.IllegalScoreException.ErrorCode.SCORE_GREATER_THAN_TEN, scoreException.errorCode);
     }
+
+    @Test
+    void newGame_hasZeroFrames() {
+        assertEquals(0, game.getFramesNumber());
+    }
+
+    @Test
+    void gameWithOneRoll_haseZeroFrames() {
+        game.roll(0);
+        assertEquals(0, game.getFramesNumber());
+    }
+
+    @Test
+    void gameWithTwoRolls_haseOneFrame() {
+        game.roll(0);
+        game.roll(0);
+        assertEquals(1, game.getFramesNumber());
+    }
 }
