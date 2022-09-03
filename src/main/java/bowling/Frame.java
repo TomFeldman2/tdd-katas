@@ -1,3 +1,5 @@
+package bowling;
+
 import java.util.Optional;
 
 public class Frame {

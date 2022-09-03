@@ -1,3 +1,5 @@
+package bowling;
+
 class FrameScoreHandler {
     private int bonusRolls;
 
