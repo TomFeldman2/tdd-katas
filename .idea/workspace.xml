@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="starting christams-lights kata">
-      <change afterPath="$PROJECT_DIR$/src/main/java/christamslights/Grid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/christamslights/TestGrid.java" afterDir="false" />
+    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="wrong direction!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/christamslights/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/christamslights/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/christamslights/TestGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/christamslights/TestGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +113,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestGrid.turnOnCoordinateTwice_turnsOnOneLight" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestGrid.newGrid_hasZeroLights" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -127,7 +126,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;christamslights.TestGrid.turnOnCoordinateTwice_turnsOnOneLight&quot;" />
+            <option value="&quot;christamslights.TestGrid.newGrid_hasZeroLights&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -160,7 +159,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestGrid.turnOnSameCoordinate_turnsOnOneLight" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestGrid.turnOnTwoGridsWithIntersection_turnsLightsInIntersectionOnlyOnce" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -173,7 +172,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;christamslights.TestGrid.turnOnSameCoordinate_turnsOnOneLight&quot;" />
+            <option value="&quot;christamslights.TestGrid.turnOnTwoGridsWithIntersection_turnsLightsInIntersectionOnlyOnce&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -186,10 +185,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.TestGrid" />
+        <item itemvalue="Gradle.TestGrid.turnOnTwoGridsWithIntersection_turnsLightsInIntersectionOnlyOnce" />
+        <item itemvalue="Gradle.TestGrid.newGrid_hasZeroLights" />
         <item itemvalue="Application.Grid" />
         <item itemvalue="Gradle.TestGrid.turnOnGrid_turnsOnAllLightsInGrid" />
-        <item itemvalue="Gradle.TestGrid.turnOnSameCoordinate_turnsOnOneLight" />
-        <item itemvalue="Gradle.TestGrid.turnOnCoordinateTwice_turnsOnOneLight" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +264,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1662189171204</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="wrong direction!">
+      <created>1662322137417</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1662322137417</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,6 +295,7 @@
     <MESSAGE value="test correct score" />
     <MESSAGE value="tested final roll cases" />
     <MESSAGE value="starting christams-lights kata" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting christams-lights kata" />
+    <MESSAGE value="wrong direction!" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrong direction!" />
   </component>
 </project>
