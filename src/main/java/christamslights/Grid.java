@@ -7,11 +7,11 @@ public class Grid {
     private final int[][] lights;
 
     private static final int OFF = 0;
-    private static final int ON = 1;
+
     private enum Action {
-        TURN_ON(x -> ON),
-        TURN_OFF(x -> OFF),
-        TOGGLE(x -> ON - x);
+        TURN_ON(x -> x + 1),
+        TURN_OFF(x -> Integer.min(x - 1, OFF)),
+        TOGGLE(x -> x + 2);
 
         private final Function<Integer, Integer> action;
 
