@@ -33,8 +33,9 @@ public class TestGrid {
 
     @Test
     void turnOnCoordinateTwice_turnsOnOneLight() {
-        grid.turnOn(0, 0, 0, 0);
-        grid.turnOn(0, 0, 0, 0);
+        grid
+                .turnOn(0, 0, 0, 0)
+                .turnOn(0, 0, 0, 0);
         assertThatNumberOfLights().isOne();
 
     }
@@ -66,22 +67,25 @@ public class TestGrid {
 
     @Test
     void turnOnTwoGridsWithoutIntersection_turnsOnSumOfLightsInGrids() {
-        grid.turnOn(0, 0, 9, 9);
-        grid.turnOn(20, 20, 29, 29);
+        grid
+                .turnOn(0, 0, 9, 9)
+                .turnOn(20, 20, 29, 29);
         assertThatNumberOfLights().isEqualTo(10 * 10 + 10 * 10);
     }
 
     @Test
     void turnOnTwoGridsWithIntersection_turnsLightsInIntersectionOnlyOnce() {
-        grid.turnOn(0, 0, 9, 9);
-        grid.turnOn(8, 8, 10, 10);
+        grid
+                .turnOn(0, 0, 9, 9)
+                .turnOn(8, 8, 10, 10);
         assertThatNumberOfLights().isEqualTo(10 * 10 + 3 * 3 - 2 * 2);
     }
 
     @Test
     void turnOnTwoGridsThatContainOnAnother_turnsLightsInContainingOnlyOnce() {
-        grid.turnOn(0, 0, 2, 2);
-        grid.turnOn(1, 1, 1, 1);
+        grid
+                .turnOn(0, 0, 2, 2)
+                .turnOn(1, 1, 1, 1);
         assertThatNumberOfLights().isEqualTo(3 * 3);
     }
 
@@ -97,23 +101,26 @@ public class TestGrid {
 
     @Test
     void turnOnThanTurnOff_turnsZeroLights() {
-        grid.turnOn(0, 0, 100, 100);
-        grid.turnOff(0, 0, 100, 100);
+        grid
+                .turnOn(0, 0, 100, 100)
+                .turnOff(0, 0, 100, 100);
         assertAllLightsAreOff();
     }
 
     @Test
     void turnOnSquareThanTurnOffIntersectingSquare_turnsOffLightsInIntersection() {
-        grid.turnOn(0, 0, 9, 9);
-        grid.turnOff(8, 8, 10, 10);
+        grid
+                .turnOn(0, 0, 9, 9)
+                .turnOff(8, 8, 10, 10);
         assertThatNumberOfLights().isEqualTo(10 * 10 - 2 * 2);
     }
 
     @Test
     void turnOnOffOn_turnsLightsOn() {
-        grid.turnOn(0, 0, 99, 9);
-        grid.turnOff(0, 0, 99, 99);
-        grid.turnOn(0, 0, 99, 99);
+        grid
+                .turnOn(0, 0, 99, 9)
+                .turnOff(0, 0, 99, 99)
+                .turnOn(0, 0, 99, 99);
         assertThatNumberOfLights().isEqualTo(100 * 100);
     }
 

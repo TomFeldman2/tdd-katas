@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="wrong direction!">
+    <list default="true" id="ae723f96-be43-4fdb-88c2-534e7b808caa" name="Changes" comment="solved part one">
+      <change afterPath="$PROJECT_DIR$/src/main/java/christamslights/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/christamslights/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/christamslights/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/christamslights/TestGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/christamslights/TestGrid.java" afterDir="false" />
@@ -76,9 +77,22 @@
       <recent name="FrameResult" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestGrid">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Grid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="christamslights.Grid" />
+      <module name="untitled.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="christamslights.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="christamslights.Main" />
       <module name="untitled.main" />
       <extension name="coverage">
         <pattern>
@@ -136,29 +150,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestGrid.turnOnGrid_turnsOnAllLightsInGrid" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;christamslights.TestGrid.turnOnGrid_turnsOnAllLightsInGrid&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="TestGrid.turnOnTwoGridsWithIntersection_turnsLightsInIntersectionOnlyOnce" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -184,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.TestGrid" />
         <item itemvalue="Gradle.TestGrid.turnOnTwoGridsWithIntersection_turnsLightsInIntersectionOnlyOnce" />
         <item itemvalue="Gradle.TestGrid.newGrid_hasZeroLights" />
         <item itemvalue="Application.Grid" />
-        <item itemvalue="Gradle.TestGrid.turnOnGrid_turnsOnAllLightsInGrid" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +262,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1662322137417</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎-00011" summary="solved part one">
+      <created>1662323999207</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1662323999207</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,6 +294,7 @@
     <MESSAGE value="tested final roll cases" />
     <MESSAGE value="starting christams-lights kata" />
     <MESSAGE value="wrong direction!" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrong direction!" />
+    <MESSAGE value="solved part one" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved part one" />
   </component>
 </project>

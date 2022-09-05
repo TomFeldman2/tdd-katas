@@ -40,24 +40,26 @@ public class Grid {
                 .sum();
     }
 
-    public void turnOn(int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
-        transform(Action.TURN_ON, topRowLeft, topColLeft, bottomRowRight, bottomColRight);
+    public Grid turnOn(int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
+        return transform(Action.TURN_ON, topRowLeft, topColLeft, bottomRowRight, bottomColRight);
     }
 
-    public void turnOff(int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
-        transform(Action.TURN_OFF, topRowLeft, topColLeft, bottomRowRight, bottomColRight);
+    public Grid turnOff(int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
+        return transform(Action.TURN_OFF, topRowLeft, topColLeft, bottomRowRight, bottomColRight);
     }
 
-    public void toggle(int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
-        transform(Action.TOGGLE, topRowLeft, topColLeft, bottomRowRight, bottomColRight);
+    public Grid toggle(int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
+        return transform(Action.TOGGLE, topRowLeft, topColLeft, bottomRowRight, bottomColRight);
     }
 
-    public void transform(Action action, int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
+    private Grid transform(Action action, int topRowLeft, int topColLeft, int bottomRowRight, int bottomColRight) {
         for (int row = topRowLeft; row <= bottomRowRight; row++) {
             for (int col = topColLeft; col <= bottomColRight; col++) {
                 lights[row][col] = action.apply(lights[row][col]);
             }
         }
+
+        return this;
     }
 
     public static class GridBuilder {
